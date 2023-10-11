@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Pendaftaran</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #068fff;  
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #ffffff; 
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="Alamat"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Form Pendaftaran</h1>
+      <form id="registrationForm" onsubmit="validateForm(event)">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" placeholder="Nama" /><br /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email" /><br /><br />
+
+        <label for="alamat">Alamat:</label>
+        <textarea id="alamat" placeholder="Alamat"></textarea><br /><br />
+
+        <button type="submit">Daftar</button>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        var nama = document.getElementById("nama").value;
+        var email = document.getElementById("email").value;
+        var alamat = document.getElementById("alamat").value;
+
+        if (nama === "" || email === "" || alamat === "") {
+          alert("Anda Harus Mengisi Data Dengan Lengkap");
+        } else {
+          alert(
+            "Pendaftaran Berhasil!\nNama: " +
+              nama +
+              "\nEmail: " +
+              email +
+              "\nAlamat: " +
+              alamat
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
